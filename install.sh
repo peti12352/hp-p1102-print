@@ -45,7 +45,12 @@ deps() {
         sudo dnf install -y "${pkgs[@]}"
       elif command -v apt &>/dev/null; then
         sudo apt update
-        local pkgs=(foo2zjs ghostscript cups)
+        local pkgs=(ghostscript cups)
+        if apt-cache show foo2zjs &>/dev/null; then
+          pkgs+=(foo2zjs)
+        else
+          pkgs+=(printer-driver-foo2zjs)
+        fi
         if [[ "$WITH_OFFICE" -eq 1 ]]; then
           pkgs+=(libreoffice-writer libreoffice-calc libreoffice-impress)
         fi

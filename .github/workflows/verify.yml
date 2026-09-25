@@ -10,5 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install print pipeline tools
-        run: sudo apt-get update && sudo apt-get install -y foo2zjs ghostscript
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ghostscript
+          sudo apt-get install -y foo2zjs || sudo apt-get install -y printer-driver-foo2zjs
       - run: ./verify.sh
