@@ -1,0 +1,14 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install print pipeline tools
+        run: sudo apt-get update && sudo apt-get install -y foo2zjs ghostscript
+      - run: ./verify.sh

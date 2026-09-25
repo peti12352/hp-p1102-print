@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+d="$(readlink -f "${BASH_SOURCE[0]}")"
+exec python3 "$(dirname "$d")/print_p1102.py" "$@"

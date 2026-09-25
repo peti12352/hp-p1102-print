@@ -1,0 +1,34 @@
+{
+  "id": "p1102",
+  "label": "HP LaserJet P1102 / P1102w",
+  "linux": {
+    "pipeline": "zjs",
+    "usb_vendor": "03f0",
+    "uri_brand": "HP",
+    "direct_usb": true,
+    "tools": ["pdftops", "foo2zjs-wrapper"],
+    "products": {
+      "002a": {"name": "HP LaserJet Professional P1102", "printable": true},
+      "102a": {"name": "HP LaserJet Professional P1102w", "printable": true},
+      "032a": {"name": "HP LaserJet Professional P1102w (mass-storage mode)", "smart_install": true},
+      "042a": {"name": "HP LaserJet P1102 Smart Install (CD mode)", "smart_install": true}
+    }
+  },
+  "match": {
+    "cups_queue": [
+      "HP LaserJet Professional P1102",
+      "HP LaserJet Pro P1102",
+      "HP LaserJet Professional P1102w",
+      "HP P1102",
+      "P1102",
+      "P1102w",
+      "p1102",
+      "002a",
+      "102a"
+    ],
+    "windows": ["P1102", "p1102"]
+  },
+  "drivers": {
+    "windows": "https://ftp.hp.com/pub/softlib/software13/COL32431/bi-80329-12/hp_LJP1100_P1560_P1600_Full_Solution-v20180815-50157037_1.exe"
+  }
+}

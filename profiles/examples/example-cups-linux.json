@@ -1,0 +1,13 @@
+{
+  "id": "my-printer",
+  "label": "Example: any printer with a working CUPS queue (Linux/macOS)",
+  "linux": {
+    "pipeline": "cups",
+    "direct_usb": false,
+    "tools": ["lp", "lpstat"]
+  },
+  "match": {
+    "cups_queue": ["MyPrinter", "my-printer"],
+    "windows": ["MyPrinter"]
+  }
+}
